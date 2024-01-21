@@ -1,3 +1,13 @@
+const particleContainer = document.querySelector(".particle-background");
+
+for (let i = 0; i < 100; i++) {
+  const particle = document.createElement("div");
+  particle.classList.add("particle");
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.top = Math.random() * 100 + "%";
+  particleContainer.appendChild(particle);
+}
+
 class User {
   constructor(id, avatar, dateofbirth, email, name) {
     this.apiURL = "https://65aa055f081bd82e1d95de7d.mockapi.io/todo/todo";
@@ -119,7 +129,7 @@ class User {
 
         const dobParagraph = document.createElement("p");
         dobParagraph.classList.add("dob");
-        dobParagraph.textContent = ` ${user.dateOfbirth}`;
+        dobParagraph.textContent = ` ${user.dateOfBirth}`;
         dobParagraph.id = "date" + user.id;
         details.appendChild(dobParagraph);
 
